@@ -5,7 +5,7 @@ class Character {
 public:
     Character(std::int32_t x, std::int32_t y, const char* aacode);
     void Print() const;
-    void Move();
+    void Move(std::int32_t key);
 
 private:
     struct Position {
