@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+actor プレイヤー
+
+package ゲームシステム{
+  usecase "ゲーム起動" as UC1
+  usecase "ゲームをプレイ" as UC2
+  usecase "ゲームを終了" as UC3
+}
+プレイヤー ---> UC1
+プレイヤー ---> UC2
+プレイヤー --> UC3
+@enduml
