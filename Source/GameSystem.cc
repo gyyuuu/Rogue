@@ -14,6 +14,11 @@ GameSystem::GameSystem() {
     x = ((column-1)/2);
     m_character = std::make_unique<Character>(y,x,"@");
     m_character->Print();
+    while (true){
+        std::int32_t key = getch();
+        if(key == 'q') break;
+    }
+    
 }
 
 GameSystem::~GameSystem() {}

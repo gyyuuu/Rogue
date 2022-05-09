@@ -5,10 +5,6 @@
 
 int main() {
     GameSystem system;
-    while(true){
-        getch();
-        break;
-    }
     endwin();
     return 0;
 }
