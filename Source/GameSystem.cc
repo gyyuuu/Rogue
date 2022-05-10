@@ -25,9 +25,10 @@ namespace rogue {
     
     void GameSystem::Loop() { 
         while (true) {
-            std::int32_t key = getch();
+            erase();
             m_hero->Print();
             refresh();
+            std::int32_t key = getch();
             if (key == 'q') break;
             m_hero->Move(key);
         }
