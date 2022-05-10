@@ -1,10 +1,8 @@
-#include "../include/GameSystem.hpp"
-#include "../include/Character.hpp"
+#include "GameSystem.hpp"
+#include "Character.hpp"
 
-#include <ncurses.h>
-
-int main() {
-    GameSystem system;
-    endwin();
+int main(int argc, char* argv[]) {
+    rogue::GameSystem system;
+    system.Loop();
     return 0;
 }

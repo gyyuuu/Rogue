@@ -1,28 +1,36 @@
-#include "../include/Character.hpp"
-#include "../include/GameSystem.hpp"
+#include "Character.hpp"
+#include "GameSystem.hpp"
 
 #include <memory>
-
-GameSystem::GameSystem() {
-    initscr();
-    cbreak();
-    curs_set(0);
-    keypad(stdscr,TRUE);
-
-    std::int32_t row,column;
-    std::int32_t x,y;
-    getmaxyx(stdscr,row,column);
-    y= row/2;
-    x = ((column-1)/2);
-    m_character = std::make_unique<Character>(y,x,"@");
-    m_character->Print();
-    while (true){
-        std::int32_t key = getch();
-        m_character->Print();
-        refresh();
-        if (key == 'q') break;
-        m_character->Move(key);
+#include <ncurses.h>
+namespace rogue {
+    GameSystem::GameSystem() {
+        initscr();
+        cbreak();
+        curs_set(0);
+        keypad(stdscr, TRUE);
+    
+        std::int32_t row;
+        std::int32_t column;
+        std::int32_t x;
+        std::int32_t y;
+        getmaxyx(stdscr, row, column);
+        y= row/2;
+        x = ((column-1)/2);
+        m_hero = std::make_unique<character::Hero>(y, x, '@');
+        m_hero->Print();
+    }
+    
+    GameSystem::~GameSystem() {}
+    
+    void GameSystem::Loop() { 
+        while (true) {
+            std::int32_t key = getch();
+            m_hero->Print();
+            refresh();
+            if (key == 'q') break;
+            m_hero->Move(key);
+        }
+        endwin();
     }
 }
-
-GameSystem::~GameSystem() {}

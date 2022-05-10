@@ -1,15 +1,17 @@
 #pragma once
 #include "Character.hpp"
 
-#include<memory>
-#include <ncurses.h>
+#include <memory>
 
-class GameSystem {
-public:
-    GameSystem();
-    ~GameSystem();
-    void Create();
-
-private:
-    std::unique_ptr<Character> m_character;
-};
+namespace rogue {
+    class GameSystem {
+    public:
+        GameSystem();
+        ~GameSystem();
+        void Create();
+        void Loop();
+    
+    private:
+        std::unique_ptr<character::Hero> m_hero;
+    };
+}
