@@ -2,7 +2,7 @@ COMPILER  = clang++
 CFLAGS    = -g -MMD -MP -std=c++20 -Wall -Wextra -Winit-self -Wno-missing-field-initializers
 LDFLAGS   = -lncurses
 LIBS      =
-INCLUDE   = 
+INCLUDE   = -I./include
 TARGET    = ./bin/$(shell basename `pwd`)
 SRCDIR    = ./source
 SOURCES   = $(wildcard $(SRCDIR)/*.cc)
