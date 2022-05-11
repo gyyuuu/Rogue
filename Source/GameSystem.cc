@@ -1,4 +1,4 @@
-#include "Character.hpp"
+#include "Hero.hpp"
 #include "GameSystem.hpp"
 
 #include <memory>
@@ -10,14 +10,14 @@ namespace rogue {
         curs_set(0);
         keypad(stdscr, TRUE);
     
-        std::int32_t row;
-        std::int32_t column;
-        std::int32_t x;
-        std::int32_t y;
-        getmaxyx(stdscr, row, column);
-        y= row/2;
-        x = ((column-1)/2);
-        m_hero = std::make_unique<character::Hero>(y, x, '@');
+        std::int32_t scrrow = 0;
+        std::int32_t scrcolumn = 0;
+        std::int32_t row = 0;
+        std::int32_t column = 0;
+        getmaxyx(stdscr, scrrow, scrcolumn);
+        row = scrrow / 2;
+        column = ((scrcolumn - 1) / 2);
+        m_hero = std::make_unique<rogue::Hero>(row , column, '@');
         m_hero->Print();
     }
     

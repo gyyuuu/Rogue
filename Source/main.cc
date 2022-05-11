@@ -1,5 +1,5 @@
 #include "GameSystem.hpp"
-#include "Character.hpp"
+#include "Hero.hpp"
 
 int main(int argc, char* argv[]) {
     rogue::GameSystem system;
