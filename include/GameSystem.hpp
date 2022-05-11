@@ -1,5 +1,5 @@
 #pragma once
-#include "Character.hpp"
+#include "Hero.hpp"
 
 #include <memory>
 
@@ -12,6 +12,6 @@ namespace rogue {
         void Loop();
     
     private:
-        std::unique_ptr<character::Hero> m_hero;
+        std::unique_ptr<rogue::Hero> m_hero;
     };
 }
