@@ -10,14 +10,16 @@ namespace rogue {
         curs_set(0);
         keypad(stdscr, TRUE);
     
-        std::int32_t scrrow = 0;
-        std::int32_t scrcolumn = 0;
         std::int32_t row = 0;
         std::int32_t column = 0;
-        getmaxyx(stdscr, scrrow, scrcolumn);
-        row = scrrow / 2;
-        column = ((scrcolumn - 1) / 2);
-        m_hero = std::make_unique<rogue::Hero>(row , column, '@');
+        std::int32_t scrrow = 0;
+        std::int32_t scrcolumn = 0;
+        getmaxyx(stdscr, row, column);
+        scrrow = row / 2;
+        scrcolumn = ((column - 1) / 2);
+        m_dungeon = std::make_unique<rogue::Dungeon>();
+        m_hero = std::make_unique<rogue::Hero>(scrrow , scrcolumn, '@');
+        m_dungeon->Print();
         m_hero->Print();
     }
     
@@ -26,6 +28,7 @@ namespace rogue {
     void GameSystem::Loop() { 
         while (true) {
             erase();
+            m_dungeon->Print();
             m_hero->Print();
             refresh();
             std::int32_t key = getch();
