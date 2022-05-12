@@ -3,28 +3,28 @@
 
 namespace rogue {
     Hero::Hero(std::int32_t row, std::int32_t column, const char symbol) {
-       m_entity.m_pos.m_row = row;
-       m_entity.m_pos.m_column = column;
-       m_entity.m_symbol = symbol;
+       m_position.y= row;
+       m_position.x = column;
+       m_symbol = symbol;
     }
     
     void Hero::Print() const {
-        mvprintw(m_entity.m_pos.m_row, m_entity.m_pos.m_column, &m_entity.m_symbol);
+        mvprintw(m_position.y, m_position.x, &m_symbol);
     }
     
     void Hero::Move(std::int32_t key) {
         switch (key) {
             case KEY_UP: 
-                m_entity.m_pos.m_row--; 
+                m_position.y--; 
                 break;
             case KEY_DOWN: 
-                m_entity.m_pos.m_row++;
+                m_position.y++;
                 break;
             case KEY_LEFT: 
-                m_entity.m_pos.m_column--;
+                m_position.x--;
                 break;
             case KEY_RIGHT: 
-                m_entity.m_pos.m_column++; 
+                m_position.x++; 
                 break;
         }
     }
