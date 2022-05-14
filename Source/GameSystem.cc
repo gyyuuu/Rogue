@@ -1,4 +1,5 @@
 #include "Hero.hpp"
+#include "Monster.hpp"
 #include "GameSystem.hpp"
 
 #include <memory>
@@ -15,8 +16,11 @@ GameSystem::GameSystem() {
     getmaxyx(stdscr, console_height, console_width);
     std::int32_t hero_y = console_height / 2;
     std::int32_t hero_x = ((console_width - 1) / 2);
+    std::int32_t monster_y = ((console_height - 7) / 2) + 1;
+    std::int32_t monster_x = ((console_width - 18) / 2) + 1;
     m_dungeon = std::make_unique<rogue::Dungeon>();
     m_hero = std::make_unique<rogue::Hero>(hero_y , hero_x, '@');
+    m_monster = std::make_unique<rogue::Monster>(monster_y , monster_x, 'M');
     m_dungeon->Print();
     m_hero->Print();
 }
@@ -28,6 +32,7 @@ void GameSystem::Loop() {
         erase();
         m_dungeon->Print();
         m_hero->Print();
+        m_monster->Print();
         refresh();
         std::int32_t key = getch();
         if (key == 'q') break;

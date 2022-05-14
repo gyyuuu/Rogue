@@ -1,7 +1,7 @@
 #pragma once
 #include "Hero.hpp"
 #include "Dungeon.hpp"
-
+#include "Monster.hpp"
 #include <memory>
 
 namespace rogue {
@@ -15,5 +15,6 @@ public:
 private:
     std::unique_ptr<rogue::Hero> m_hero;
     std::unique_ptr<rogue::Dungeon> m_dungeon;
+    std::unique_ptr<rogue::Monster> m_monster;
 };
 }
