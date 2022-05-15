@@ -16,5 +16,6 @@ private:
     std::unique_ptr<rogue::Hero> m_hero;
     std::unique_ptr<rogue::Dungeon> m_dungeon;
     std::unique_ptr<rogue::Monster> m_monster;
+    Status m_hero_status;
 };
 }
