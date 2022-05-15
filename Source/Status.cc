@@ -17,5 +17,19 @@ void Status::Print() const noexcept {
     getmaxyx(stdscr, console_height, console_width);
 
     mvprintw((console_height - 1), 0, "LV:%d HP:%d ATK:%d DEF:%d", m_LV, m_HP, m_ATK, m_DEF);
+};
+
+void Status::LVUp(std::int32_t key) noexcept {
+    switch (key)
+    {
+    case 'U':
+        m_LV++;
+        m_HP++;
+        m_ATK++;
+        m_DEF++;
+        break;    
+    default:
+        break;
+    }
 }
 }
