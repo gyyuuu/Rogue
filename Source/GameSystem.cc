@@ -43,6 +43,7 @@ void GameSystem::Loop() {
         std::int32_t key = getch();
         if (key == 'q') break;
         m_hero->Move(key);
+        m_hero_status.LVUp(key);
     }
     endwin();
 }
