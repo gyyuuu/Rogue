@@ -2,10 +2,11 @@
 #include <ncurses.h>
 
 namespace rogue {
-    Hero::Hero(std::int32_t row, std::int32_t column, const char symbol) {
-       m_position.y= row;
-       m_position.x = column;
-       m_symbol = symbol;
+    Hero::Hero(std::int32_t row, std::int32_t column, const char symbol, Status status) {
+        m_position.y= row;
+        m_position.x = column;
+        m_symbol = symbol;
+        m_status = status;
     }
     
     void Hero::Print() const {

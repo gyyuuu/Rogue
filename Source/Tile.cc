@@ -17,6 +17,6 @@ Tile::Tile(const Tile& tile) {
 Tile::~Tile(){};
 
 void Tile::Print() const noexcept {
-    mvprintw(m_position.x, m_position.y, &m_symbol);
+    mvprintw(m_position.y, m_position.x, &m_symbol);
 };
 }
