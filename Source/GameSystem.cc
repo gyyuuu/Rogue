@@ -7,6 +7,8 @@
 namespace rogue {
 GameSystem::GameSystem() {
     initscr();
+
+
     cbreak();
     curs_set(0);
     keypad(stdscr, TRUE);
@@ -18,8 +20,10 @@ GameSystem::GameSystem() {
     std::int32_t hero_x = ((console_width - 1) / 2);
     std::int32_t monster_y = ((console_height - 7) / 2) + 1;
     std::int32_t monster_x = ((console_width - 18) / 2) + 1;
+
+    Status hero_status;
     m_dungeon = std::make_unique<rogue::Dungeon>();
-    m_hero = std::make_unique<rogue::Hero>(hero_y , hero_x, '@');
+    m_hero = std::make_unique<rogue::Hero>(hero_y , hero_x, '@', hero_status);
     m_monster = std::make_unique<rogue::Monster>(monster_y , monster_x, 'M');
     m_dungeon->Print();
     m_hero->Print();

@@ -8,7 +8,7 @@ Dungeon::Dungeon() {
         m_tiles.emplace_back(tile_position.y, tile_position.x + width, '-');
     }
 
-     m_tiles.emplace_back(tile_position.y + 1, tile_position.x, '|' );
+    m_tiles.emplace_back(tile_position.y + 1, tile_position.x, '|' );
     for (std::int32_t width = 0; width < 18 - 1; width++) {
         m_tiles.emplace_back(tile_position.y + 1, tile_position.x + width, '.');
     }
