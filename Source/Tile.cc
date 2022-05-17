@@ -1,6 +1,6 @@
 #include "Tile.hpp"
-
 #include <cstdint>
+
 namespace rogue {
 Tile::Tile(std::int32_t y, std::int32_t x, char symbol){
     m_position.y = y;
