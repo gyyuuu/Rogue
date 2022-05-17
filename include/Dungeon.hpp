@@ -1,9 +1,6 @@
 #pragma once
-#include "Tile.hpp"
-
-#include <cstdint>
-#include <string>
 #include <vector>
+#include "Tile.hpp"
 
 namespace rogue {
 class Dungeon {

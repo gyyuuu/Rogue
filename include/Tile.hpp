@@ -1,9 +1,7 @@
 #pragma once
-#include "Position.hpp"
-
-#include <cstdint>
-#include <type_traits>
 #include <ncurses.h>
+#include <cstdint>
+#include "Position.hpp"
 
 namespace rogue{
 class Tile {

@@ -1,6 +1,7 @@
 #pragma once
-
 #include "Position.hpp"
+#include <cstdint>
+
 namespace rogue {
 class ConsoleSize{
 public:
