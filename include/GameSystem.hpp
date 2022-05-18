@@ -9,8 +9,7 @@ class GameSystem {
 public:
     GameSystem();
     ~GameSystem();
-    void Create();
-    void Loop();
+    void Loop() noexcept;
 
 private:
     std::unique_ptr<Hero> m_hero;

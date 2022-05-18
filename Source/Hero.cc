@@ -13,11 +13,11 @@ namespace rogue {
         m_status = std::make_unique<Status>();
     }
     
-    void Hero::Print() const {
+    void Hero::Print() const noexcept {
         mvaddch(m_position.y, m_position.x, m_symbol);
     }
     
-    void Hero::Move(std::int32_t key) {
+    void Hero::Move(std::int32_t key) noexcept {
         switch (key) {
             case KEY_UP: 
                 m_position.y--; 

@@ -8,8 +8,8 @@ namespace rogue {
 class Hero {
 public:
     Hero();
-    void Print() const;
-    void Move(std::int32_t key);
+    void Print() const noexcept;
+    void Move(std::int32_t key) noexcept;
 
 private:
     Position m_position;
