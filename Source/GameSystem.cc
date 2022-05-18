@@ -11,14 +11,14 @@ GameSystem::GameSystem() {
     curs_set(0);
     keypad(stdscr, TRUE);
 
-    m_dungeon = std::make_unique<rogue::Dungeon>();
-    m_hero = std::make_unique<rogue::Hero>();
-    m_monster = std::make_unique<rogue::Monster>();
+    m_dungeon = std::make_unique<Dungeon>();
+    m_hero = std::make_unique<Hero>();
+    m_monster = std::make_unique<Monster>();
 }
     
 GameSystem::~GameSystem() {}
 
-void GameSystem::Loop() { 
+void GameSystem::Loop() noexcept { 
     while (true) {
         erase();
         m_dungeon->Print();
