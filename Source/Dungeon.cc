@@ -1,4 +1,5 @@
 #include "Dungeon.hpp"
+#include <cstdint>
 #include "Position.hpp"
 
 namespace rogue {
