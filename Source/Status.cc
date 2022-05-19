@@ -9,7 +9,6 @@ Status::Status(){
     m_hitpoint = 20;
     m_attack = 5;
     m_defence = 5;
-
 };
 
 Status::~Status(){};

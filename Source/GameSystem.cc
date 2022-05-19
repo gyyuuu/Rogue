@@ -10,7 +10,8 @@ GameSystem::GameSystem() {
     cbreak();
     curs_set(0);
     keypad(stdscr, TRUE);
-
+    noecho();
+    
     m_dungeon = std::make_unique<rogue::Dungeon>();
     m_hero = std::make_unique<rogue::Hero>();
     m_monster = std::make_unique<rogue::Monster>();
@@ -20,16 +21,15 @@ GameSystem::~GameSystem() {}
 
 void GameSystem::Loop() { 
     while (true) {
-        erase();
         m_dungeon->Print();
         m_hero->Print();
         m_monster->Print();
         m_hero_status.Print();
-        refresh();
         std::int32_t key = getch();
         if (key == 'q') break;
         m_hero->Move(key);
         m_hero_status.LVUp(key);
+        refresh();
     }
     endwin();
 }

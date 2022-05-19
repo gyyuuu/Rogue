@@ -9,7 +9,7 @@ Message::Message() {
 Message::~Message(){};
 
 void Message::Print(std::string message) const noexcept {
-    //Clear();
+    Clear();
     mvaddstr(m_position.y, m_position.x, message.c_str());
 };
 
