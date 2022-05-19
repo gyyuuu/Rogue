@@ -1,6 +1,7 @@
 #include "Status.hpp"
 #include <ncurses.h>
 #include <cstdint>
+#include <Message.hpp>
 
 namespace rogue {
 Status::Status(){
@@ -8,7 +9,6 @@ Status::Status(){
     m_hitpoint = 20;
     m_attack = 5;
     m_defence = 5;
-
 };
 
 Status::~Status(){};
@@ -29,6 +29,7 @@ void Status::LVUp(std::int32_t key) noexcept {
         m_hitpoint++;
         m_attack++;
         m_defence++;
+        m_message.Print("Level Up!");
         break;    
     default:
         break;

@@ -18,8 +18,9 @@ namespace rogue {
     }
     
     void Hero::Move(std::int32_t key) noexcept {
+        mvaddch(m_position.y, m_position.x,' ');
         switch (key) {
-            case KEY_UP: 
+            case KEY_UP:
                 m_position.y--; 
                 break;
             case KEY_DOWN: 

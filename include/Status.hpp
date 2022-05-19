@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include "Position.hpp"
-
+#include "Message.hpp"
 namespace rogue {
 class Status {
 public:
@@ -14,5 +14,6 @@ private:
     std::int32_t m_attack;
     std::int32_t m_defence;
     std::int32_t m_level;
+    Message m_message;
 };
 }
