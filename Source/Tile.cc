@@ -2,7 +2,8 @@
 #include <cstdint>
 
 namespace rogue {
-Tile::Tile(std::int32_t y, std::int32_t x, char symbol){
+Tile::Tile(Position position, TileType type){
+    /* 実装中 */
     m_position.y = y;
     m_position.x = x;
     m_symbol = symbol;
