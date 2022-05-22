@@ -1,22 +1,23 @@
 #pragma once
 #include <cstdint>
-#include "Position"
+#include <array>
+#include "Position.hpp"
 
 namespace rogue {
 class TileType
 {
 public:
-    enum Type{kLRwall, kTBwall, kdoor, kfloor, ktypemax};
+    enum Type{kLRWall, kTBWall, kDoor, kFloor, kTypeMax};
     TileType(Type type);
     ~TileType();
     void Ride();
     void Leave();
-    bool IsMovable(){};
-    void Print(Position position);
+    bool IsMovable() const noexcept;
+    void Print(Position position) const noexcept;
 
 private:
     const Type m_type;
     bool m_isriding;
-    const std::array<char, ktypemax>
+    const std::array<char, kTypeMax> m_symbols;
 };
 }

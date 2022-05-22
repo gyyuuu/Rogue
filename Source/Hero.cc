@@ -1,6 +1,7 @@
 #include "Hero.hpp"
 #include <ncurses.h>
 #include <cstdint>
+#include "Tile.hpp"
 
 namespace rogue {
     Hero::Hero() {
@@ -11,14 +12,14 @@ namespace rogue {
         m_position.x = ((console_width - 1) / 2);
         m_symbol = '@';
         m_status = std::make_unique<Status>();
-    }
+    };
     
     void Hero::Print() const noexcept {
         mvaddch(m_position.y, m_position.x, m_symbol);
-    }
+    };
     
     void Hero::Move(std::int32_t key) noexcept {
-        mvaddch(m_position.y, m_position.x,' ');
+        mvaddch(m_position.y, m_position.x, ' ');
         switch (key) {
             case KEY_UP:
                 m_position.y--; 
@@ -33,5 +34,9 @@ namespace rogue {
                 m_position.x++; 
                 break;
         }
+    };
+
+    Position Hero::GetPosition() const noexcept {
+        return m_position;
     }
 }
