@@ -12,7 +12,7 @@ public:
     void Print(std::string message) const noexcept;
 private:
     Position m_position;
-    std::int32_t m_region;
+    std::int32_t m_area;
     void Clear() const noexcept;
 };
 }

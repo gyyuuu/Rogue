@@ -13,9 +13,9 @@ GameSystem::GameSystem() {
     keypad(stdscr, TRUE);
     noecho();
     
-    m_dungeon = std::make_unique<rogue::Dungeon>();
-    m_hero = std::make_unique<rogue::Hero>();
-    m_monster = std::make_unique<rogue::Monster>();
+    m_dungeon = std::make_unique<Dungeon>();
+    m_hero = std::make_unique<Hero>();
+    m_monster = std::make_unique<Monster>();
 }
     
 GameSystem::~GameSystem() {}
