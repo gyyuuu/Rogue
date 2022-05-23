@@ -2,15 +2,14 @@
 #include <ncurses.h>
 #include "Position.hpp"
 
-
 /*実装中*/
 namespace rogue {
 TileType::TileType(Type type) :
     m_type(type),
     m_isriding(false),
-    m_symbols({'|', '-', '+', '.'}){}
+    m_symbols({'|', '-', '+', '.'}){};
 
-TileType::~TileType(){}
+TileType::~TileType(){};
 
 void TileType::Ride() {
     m_isriding = true;
@@ -21,15 +20,15 @@ void TileType::Leave() {
 };
 
 bool TileType::IsMovable() const noexcept {
-    if((m_type == kFloor) || (m_type == kDoor)) {
-        return true;
+    if((m_type == kTBWall) || (m_type == kLRWall)) {
+        return false;
     }
-    return false;
-}
+    return true;
+};
 
 void TileType::Print(Position position) const noexcept {
     mvaddch(position.y, position.x, m_symbols[m_type]);
-}
+};
 
 }
 

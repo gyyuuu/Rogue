@@ -6,7 +6,7 @@
 namespace rogue {
 Dungeon::Dungeon() {
     Position tile_position = GetCenter();
-    for (std::int32_t width = 0; width < 18; width++) {
+    for (std::int32_t width = 0; width < 19; width++) {
         m_tiles.emplace_back(tile_position, TileType::kTBWall);
         tile_position.x++;
     }
@@ -22,11 +22,12 @@ Dungeon::Dungeon() {
             tile_position.x++;
             m_tiles.emplace_back(tile_position, TileType::kFloor);
         }
+        tile_position.x++;
         m_tiles.emplace_back(tile_position, TileType::kLRWall);
     }
     tile_position = GetCenter();
     tile_position.y = tile_position.y + 5;
-    for (std::int32_t width = 0; width < 18; width++) {
+    for (std::int32_t width = 0; width < 19; width++) {
         m_tiles.emplace_back(tile_position, TileType::kTBWall);
         tile_position.x++;
     }
