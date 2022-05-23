@@ -10,6 +10,7 @@ public:
     Hero();
     void Print() const noexcept;
     void Move(std::int32_t key) noexcept;
+    Position GetPosition() const noexcept;
 
 private:
     Position m_position;

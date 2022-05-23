@@ -1,22 +1,28 @@
 #include "Tile.hpp"
+#include <ncurses.h>
 #include <cstdint>
+#include "TileType.hpp"
 
 namespace rogue {
-Tile::Tile(std::int32_t y, std::int32_t x, char symbol){
-    m_position.y = y;
-    m_position.x = x;
-    m_symbol = symbol;
-};
-
-Tile::Tile(const Tile& tile) {
-    m_position.y = tile.m_position.y;
-    m_position.x = tile.m_position.x;
-    m_symbol = tile.m_symbol;
-};
+Tile::Tile(Position position, TileType type)
+    : m_position(position)
+    , m_type(type){};
 
 Tile::~Tile(){};
 
 void Tile::Print() const noexcept {
-    mvaddch(m_position.y, m_position.x, m_symbol);
+    m_type.Print(m_position);
 };
+
+bool Tile::IsMovable() const noexcept {
+    return m_type.IsMovable();
+};
+
+bool Tile::IsNextPosition(Position position) const noexcept {
+    if ((m_position.x == position.x) && (m_position.y == position.y)) {
+        return true;
+    }
+    return false;
 }
+};
+
