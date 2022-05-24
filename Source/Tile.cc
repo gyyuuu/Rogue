@@ -19,7 +19,7 @@ bool Tile::IsMovable() const noexcept {
 };
 
 bool Tile::IsNextPosition(Position position) const noexcept {
-    if ((m_position.x == position.x) && (m_position.y == position.y)) {
+    if (m_position == position) {
         return true;
     }
     return false;
